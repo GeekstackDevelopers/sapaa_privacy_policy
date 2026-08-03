@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Sapaa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1c2b39;
+      --ink-soft: #33465a;
+      --parchment: #f7f4ec;
+      --panel: #fbf9f3;
+      --brass: #9c7a2e;
+      --brass-soft: #c9ab5f;
+      --rule: #ddd4bc;
+      --muted: #697884;
+      --shadow: 0 1px 0 rgba(28, 43, 57, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--parchment);
+      color: var(--ink);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--brass);
+    }
+
+    /* ---------- Header ---------- */
+    .masthead {
+      border-bottom: 1px solid var(--rule);
+      background:
+        linear-gradient(180deg, rgba(156, 122, 46, 0.06), rgba(156, 122, 46, 0) 60%),
+        var(--panel);
+      padding: 56px 6vw 40px;
+      position: relative;
+    }
+
+    .masthead::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--brass) 0%, var(--brass-soft) 35%, transparent 36%);
+    }
+
+    .mast-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--brass);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--brass);
+      display: inline-block;
+    }
+
+    h1.doc-title {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: clamp(34px, 5vw, 54px);
+      line-height: 1.05;
+      margin: 0 0 14px;
+      letter-spacing: -0.01em;
+    }
+
+    .doc-title em {
+      font-style: italic;
+      color: var(--brass);
+      font-weight: 500;
+    }
+
+    .subline {
+      color: var(--muted);
+      font-size: 15.5px;
+      max-width: 56ch;
+      margin: 0 0 26px;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12.5px;
+      color: var(--ink-soft);
+      border-top: 1px solid var(--rule);
+      padding-top: 18px;
+    }
+
+    .meta-row div span {
+      display: block;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: 10.5px;
+      margin-bottom: 4px;
+    }
+
+    /* ---------- Layout ---------- */
+    .layout {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 0 56px;
+      padding: 44px 6vw 100px;
+    }
+
+    nav.toc {
+      position: sticky;
+      top: 32px;
+      align-self: start;
+      max-height: calc(100vh - 64px);
+      overflow-y: auto;
+      padding-right: 8px;
+    }
+
+    nav.toc .toc-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    nav.toc ol {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border-left: 1px solid var(--rule);
+    }
+
+    nav.toc li {
+      margin: 0;
+    }
+
+    nav.toc a {
+      display: flex;
+      gap: 10px;
+      align-items: baseline;
+      text-decoration: none;
+      color: var(--ink-soft);
+      font-size: 13.5px;
+      padding: 7px 0 7px 16px;
+      border-left: 2px solid transparent;
+      margin-left: -1px;
+      transition: color .15s ease, border-color .15s ease, background .15s ease;
+    }
+
+    nav.toc a .n {
+      font-family: 'IBM Plex Mono', monospace;
+      color: var(--brass-soft);
+      font-size: 11.5px;
+      flex-shrink: 0;
+    }
+
+    nav.toc a:hover {
+      color: var(--ink);
+    }
+
+    nav.toc a.active {
+      color: var(--ink);
+      border-left-color: var(--brass);
+      font-weight: 600;
+    }
+
+    nav.toc a.active .n {
+      color: var(--brass);
+    }
+
+    /* ---------- Content ---------- */
+    main.doc {
+      min-width: 0;
+    }
+
+    .notice {
+      background: var(--panel);
+      border: 1px solid var(--rule);
+      border-left: 3px solid var(--brass);
+      padding: 18px 22px;
+      font-size: 14.5px;
+      color: var(--ink-soft);
+      margin-bottom: 46px;
+      font-family: 'Source Serif 4', serif;
+    }
+
+    .notice strong {
+      color: var(--ink);
+    }
+
+    section.clause {
+      padding-top: 46px;
+      margin-top: -46px;
+      /* scroll offset compensation */
+    }
+
+    section.clause+section.clause {
+      border-top: 1px solid var(--rule);
+      padding-top: 40px;
+      margin-top: 6px;
+    }
+
+    .clause-head {
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 18px;
+      align-items: baseline;
+      margin-bottom: 16px;
+    }
+
+    .clause-num {
+      font-family: 'IBM Plex Mono', monospace;
+      color: var(--brass-soft);
+      font-size: 14px;
+      padding-top: 4px;
+    }
+
+    h2 {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: 24px;
+      margin: 0;
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: 17px;
+      margin: 26px 0 10px 64px;
+      color: var(--ink);
+    }
+
+    .clause-body {
+      margin-left: 64px;
+    }
+
+    p {
+      margin: 0 0 14px;
+      color: var(--ink);
+    }
+
+    .clause-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    ul {
+      margin: 0 0 14px;
+      padding: 0;
+      list-style: none;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 9px;
+    }
+
+    ul li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--brass-soft);
+    }
+
+    ul:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact-card {
+      margin-left: 64px;
+      background: var(--panel);
+      border: 1px solid var(--rule);
+      padding: 22px 24px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 13.5px;
+      line-height: 1.9;
+      color: var(--ink-soft);
+    }
+
+    .contact-card b {
+      color: var(--ink);
+      font-family: 'Source Serif 4', serif;
+      font-size: 15px;
+    }
+
+    .fine-print {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px dashed var(--rule);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      color: var(--muted);
+      font-style: normal;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 6vw 60px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11.5px;
+      letter-spacing: .06em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    /* mobile toc toggle */
+    .toc-toggle {
+      display: none;
+    }
+
+    @media (max-width: 880px) {
+      .layout {
+        grid-template-columns: 1fr;
+        padding-top: 24px;
+      }
+
+      nav.toc {
+        position: relative;
+        top: 0;
+        max-height: none;
+        margin-bottom: 34px;
+        border: 1px solid var(--rule);
+        background: var(--panel);
+        padding: 16px 18px;
+      }
+
+      nav.toc ol {
+        border-left: none;
+      }
+
+      nav.toc a {
+        padding-left: 14px;
+      }
+
+      h3,
+      .clause-body,
+      .contact-card {
+        margin-left: 0;
+      }
+
+      .clause-head {
+        grid-template-columns: 34px 1fr;
+        gap: 12px;
+      }
+    }
+
+    @media print {
+
+      nav.toc,
+      footer {
+        display: none;
+      }
+
+      body {
+        background: #fff;
+      }
+
+      .layout {
+        grid-template-columns: 1fr;
+        padding: 0;
+      }
+
+      .masthead::after {
+        display: none;
+      }
+    }
+
+    ::selection {
+      background: var(--brass-soft);
+      color: #1c2b39;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="masthead">
+    <div class="mast-inner">
+      <div class="eyebrow"><span class="dot"></span>Sapaa — Internal Practice Management</div>
+      <h1 class="doc-title">Privacy <em>Policy</em></h1>
+      <p class="subline">How Sapaa collects, uses, and protects information for Sengu and Paapu Associates, its Admins,
+        its Employees, and the clients whose matters it records.</p>
+      <div class="meta-row">
+        <div><span>Owner</span>Sengu and Paapu Associates</div>
+        <div><span>Scope</span>Single organization — internal use only</div>
+        <div><span>Last updated</span>[Insert Date]</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <nav class="toc" aria-label="Table of contents">
+      <div class="toc-label">On this page</div>
+      <ol id="toc-list">
+        <li><a href="#s1"><span class="n">01</span>Who this policy applies to</a></li>
+        <li><a href="#s2"><span class="n">02</span>Information we collect</a></li>
+        <li><a href="#s3"><span class="n">03</span>How we use your information</a></li>
+        <li><a href="#s4"><span class="n">04</span>Who can see your information</a></li>
+        <li><a href="#s5"><span class="n">05</span>Data storage and security</a></li>
+        <li><a href="#s6"><span class="n">06</span>Data retention</a></li>
+        <li><a href="#s7"><span class="n">07</span>Employee accounts created by admins</a></li>
+        <li><a href="#s8"><span class="n">08</span>Client data responsibility</a></li>
+        <li><a href="#s9"><span class="n">09</span>Third-party sharing</a></li>
+        <li><a href="#s10"><span class="n">10</span>Data subject rights</a></li>
+        <li><a href="#s11"><span class="n">11</span>Children's privacy</a></li>
+        <li><a href="#s12"><span class="n">12</span>Changes to this policy</a></li>
+        <li><a href="#s13"><span class="n">13</span>Contact us</a></li>
+      </ol>
+    </nav>
+
+    <main class="doc">
+
+      <div class="notice">
+        <strong>Internal use only.</strong> Sapaa is built and owned exclusively by Sengu and Paapu Associates for its
+        own staff and matters. It is not offered, licensed, or configured for use by any other firm or organization.
+      </div>
+
+      <section class="clause" id="s1">
+        <div class="clause-head">
+          <span class="clause-num">01</span>
+          <h2>Who this policy applies to</h2>
+        </div>
+        <div class="clause-body">
+          <p>Sapaa is used by Sengu and Paapu Associates and has two categories of users:</p>
+          <ul>
+            <li><strong>Admins</strong> — register and manage the firm's account, create and manage employee accounts,
+              create and manage client and case records, assign and review tasks, and oversee case updates.</li>
+            <li><strong>Employees</strong> — do not self-register. Accounts are created and managed by an Admin.
+              Employees log in with credentials issued to them to view assigned tasks, submit reports, update task/case
+              status, and use chat.</li>
+          </ul>
+          <p>This policy also describes how information about <strong>Clients</strong> of the firm is handled, even
+            though clients are not direct users of the app.</p>
+        </div>
+      </section>
+
+      <section class="clause" id="s2">
+        <div class="clause-head">
+          <span class="clause-num">02</span>
+          <h2>Information we collect</h2>
+        </div>
+        <div class="clause-body">
+          <h3>2.1 &nbsp;Employee information</h3>
+          <ul>
+            <li>Profile image/photo</li>
+            <li>Name</li>
+            <li>Email address</li>
+            <li>Phone number</li>
+            <li>Department</li>
+            <li>Role/designation</li>
+          </ul>
+          <h3>2.2 &nbsp;Client information</h3>
+          <ul>
+            <li>Client name and company name</li>
+            <li>Company/entity type</li>
+            <li>Phone number and email address</li>
+            <li>Address</li>
+            <li>GST number and PAN</li>
+          </ul>
+          <h3>2.3 &nbsp;Case, task, and document information</h3>
+          <ul>
+            <li>Case details, case groups, assigned employees, and case status</li>
+            <li>Task creation, approval/rejection status, and updates</li>
+            <li>Reports and status updates submitted by employees</li>
+            <li>Documents attached during case creation, and files shared in chat</li>
+          </ul>
+          <h3>2.4 &nbsp;Chat and communication data</h3>
+          <ul>
+            <li>Messages between Admins and Employees, one-on-one and in groups</li>
+            <li>Automatically generated case-group chats and their membership</li>
+            <li>Manually created groups and shared files/media</li>
+          </ul>
+          <h3>2.5 &nbsp;Account, login, and technical data</h3>
+          <ul>
+            <li>Login credentials (stored encrypted/hashed), timestamps, and role-based access data</li>
+            <li>Device information, app usage logs, crash and diagnostic data</li>
+            <li>IP address and approximate location, for security purposes</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="clause" id="s3">
+        <div class="clause-head">
+          <span class="clause-num">03</span>
+          <h2>How we use your information</h2>
+        </div>
+        <div class="clause-body">
+          <ul>
+            <li>Create and manage Admin and Employee accounts</li>
+            <li>Let Admins create, assign, approve, or reject tasks</li>
+            <li>Let Admins create and update employee and client records</li>
+            <li>Let Employees view tasks, submit reports, and update status</li>
+            <li>Support case management, including auto-created case groups and attachments</li>
+            <li>Facilitate chat between Admins and Employees, including file sharing</li>
+            <li>Let Admins review employee updates and reports on cases</li>
+            <li>Maintain client records, including GST/PAN, for billing and statutory compliance</li>
+            <li>Secure accounts and prevent unauthorized access</li>
+            <li>Maintain and improve the app</li>
+          </ul>
+          <p>We do not use employee or client data for advertising, and we do not sell personal data to third parties.
+          </p>
+        </div>
+      </section>
+
+      <section class="clause" id="s4">
+        <div class="clause-head">
+          <span class="clause-num">04</span>
+          <h2>Who can see your information</h2>
+        </div>
+        <div class="clause-body">
+          <ul>
+            <li>Admins can view employee profiles, task and case updates, employee reports, and all client records</li>
+            <li>Employees can view their own profile and the tasks/cases/chats relevant to them</li>
+            <li>Chat and case-group members can see messages and files shared within their specific chat or group</li>
+            <li>Sapaa is used solely within Sengu and Paapu Associates — data is never shared with, or accessible by,
+              any other organization</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="clause" id="s5">
+        <div class="clause-head">
+          <span class="clause-num">05</span>
+          <h2>Data storage and security</h2>
+        </div>
+        <div class="clause-body">
+          <ul>
+            <li>Data is stored on secure servers with role-based access control</li>
+            <li>Passwords are stored using industry-standard hashing/encryption</li>
+            <li>Documents and chat files are stored in encrypted storage with restricted access</li>
+            <li>No method of transmission or storage is completely secure, and we cannot guarantee absolute security
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="clause" id="s6">
+        <div class="clause-head">
+          <span class="clause-num">06</span>
+          <h2>Data retention</h2>
+        </div>
+        <div class="clause-body">
+          <p>Employee and client data is retained for as long as needed for the firm's ongoing operations, or as
+            required by law — including GST/PAN records for tax purposes. Case files, tasks, and chat records are
+            retained to preserve case history, unless deletion is requested by an Admin and permitted under applicable
+            law.</p>
+        </div>
+      </section>
+
+      <section class="clause" id="s7">
+        <div class="clause-head">
+          <span class="clause-num">07</span>
+          <h2>Employee accounts created by admins</h2>
+        </div>
+        <div class="clause-body">
+          <ul>
+            <li>Admins must obtain any necessary consent before entering an employee's personal data into Sapaa</li>
+            <li>Employees must be informed their data is processed via Sapaa in line with this policy</li>
+            <li>Admins must promptly update or remove employee data when an employee exits the firm</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="clause" id="s8">
+        <div class="clause-head">
+          <span class="clause-num">08</span>
+          <h2>Client data responsibility</h2>
+        </div>
+        <div class="clause-body">
+          <ul>
+            <li>Admins and Employees who input client data must have a lawful basis or consent to store it</li>
+            <li>Client data must be kept accurate and up to date</li>
+            <li>Client data must be used only for legitimate case and business purposes</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="clause" id="s9">
+        <div class="clause-head">
+          <span class="clause-num">09</span>
+          <h2>Third-party sharing</h2>
+        </div>
+        <div class="clause-body">
+          <p>We do not sell or rent personal data. We may share data only with:</p>
+          <ul>
+            <li>Service providers (e.g. cloud hosting) processing data on our behalf under confidentiality obligations
+            </li>
+            <li>Legal authorities, where required by law, court order, or regulation</li>
+            <li>Successors, in the event of a merger, acquisition, or sale of business assets, subject to continued
+              protection under this policy</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="clause" id="s10">
+        <div class="clause-head">
+          <span class="clause-num">10</span>
+          <h2>Data subject rights</h2>
+        </div>
+        <div class="clause-body">
+          <p>Depending on applicable law, Employees and Clients (through their Admin) may have rights to:</p>
+          <ul>
+            <li>Access the personal data held about them</li>
+            <li>Request correction of inaccurate data</li>
+            <li>Request deletion, subject to legal record-keeping obligations</li>
+            <li>Withdraw consent where processing is based on consent</li>
+          </ul>
+          <p>Requests should be routed through an Admin, or directed to us using the contact details below.</p>
+        </div>
+      </section>
+
+      <section class="clause" id="s11">
+        <div class="clause-head">
+          <span class="clause-num">11</span>
+          <h2>Children's privacy</h2>
+        </div>
+        <div class="clause-body">
+          <p>Sapaa is intended for use by working professionals — advocates, employees, and admins — and is not directed
+            at children under 18. We do not knowingly collect data from children.</p>
+        </div>
+      </section>
+
+      <section class="clause" id="s12">
+        <div class="clause-head">
+          <span class="clause-num">12</span>
+          <h2>Changes to this policy</h2>
+        </div>
+        <div class="clause-body">
+          <p>We may update this Privacy Policy from time to time to reflect changes in our practices or legal
+            requirements. Material changes will be notified within the app, and the "Last updated" date above will be
+            revised.</p>
+        </div>
+      </section>
+
+      <section class="clause" id="s13">
+        <div class="clause-head">
+          <span class="clause-num">13</span>
+          <h2>Contact us</h2>
+        </div>
+        <div class="clause-body">
+          <p>If you have questions or concerns about this Privacy Policy or how your data is handled, please contact:
+          </p>
+          <div class="contact-card">
+            <b>Sengu and Paapu Associates</b><br>
+            Email — [Insert Contact Email]<br>
+            Address — [Insert Business Address]<br>
+            Phone — [Insert Contact Number]
+          </div>
+          <div class="fine-print">
+            This document is a general template. Review with a legal professional before publishing to ensure compliance
+            with applicable data protection laws (e.g. India's DPDP Act) for your jurisdiction and user base.
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <footer>Sapaa — Sengu and Paapu Associates — Internal Use Only</footer>
+
+  <script>
+    // Active-section highlighting in the sidebar TOC on scroll.
+    const links = Array.from(document.querySelectorAll('nav.toc a'));
+    const sections = links.map(l => document.querySelector(l.getAttribute('href')));
+
+    function onScroll() {
+      let activeIndex = 0;
+      const scrollPos = window.scrollY + 120;
+      sections.forEach((sec, i) => {
+        if (sec && sec.offsetTop <= scrollPos) { activeIndex = i; }
+      });
+      links.forEach((l, i) => l.classList.toggle('active', i === activeIndex));
+    }
+    document.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('load', onScroll);
+  </script>
+
+</body>
+
+</html>
